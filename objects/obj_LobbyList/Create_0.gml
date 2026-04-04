@@ -18,12 +18,6 @@ reset_lobby_list = function () {
 		show_debug_message("Deleting: " + string(lobby_list[_i]));
 		
 		instance_destroy(lobby_list[_i]);
-
-		
 	}
 	lobby_list = [];
-	
-	
-	
-	
 }
