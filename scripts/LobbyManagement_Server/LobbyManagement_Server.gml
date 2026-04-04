@@ -44,17 +44,13 @@ function shrink_player_list() {
 function server_player_spawn_at_pos(_steam_id, _pos) {
 	var _layer = layer_get_id("Instances");
 	
-	
 	for (var _i = 0; _i < array_length(player_list); _i++) {
-		if (player_list[_i]._steam_id == _steam_id) {
+		if (player_list[_i].steam_id == _steam_id) {
 			
 			var _inst = instance_create_layer(_pos.x, _pos.y, _layer, obj_Player, {
 				steam_name : player_list[_i].steam_name,
 				steam_id : _steam_id,
 				lobby_member_id : _i
-				
-				
-				
 			});
 			player_list[_i].character = obj_Player;	
 		}	
