@@ -15,6 +15,6 @@ player_list[0] = {
 	steam_name : steam_name,
 	character : undefined,
 	start_pos : grab_spawn_point(0),
-	lobby_member_id : 0
+	lobby_member_id : undefined
 	
 }

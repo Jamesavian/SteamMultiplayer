@@ -17,8 +17,8 @@ function sync_players(_new_list) {
 			
 			var _inst = client_player_spawn_at_pos(_new_list[_i]); // spawn the player and add to list
 			_new_list[_i].character = _inst;
-			
 			array_push(player_list, _new_list[_i]);
+			
 		} else { // if the old player list does have the steam id
 			for (var _k = 0; _k = array_length(player_list); _k++) {
 				
