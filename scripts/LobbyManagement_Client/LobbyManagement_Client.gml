@@ -26,6 +26,7 @@ function sync_players(_new_list) {
 
 					player_list[_k].start_pos = _new_list[_i].start_pos;
 					player_list[_k].lobby_member_id = _new_list[_i].lobby_member_id;
+					player_list[_k].steam_name = steam_get_persona_name(player_list[_k].steam_id);
 					if (player_list[_k].character == undefined and player_list[_k].steam_id != _new_steam_id) { // if the character of that player doesnt exist
 
 						var _inst = client_player_spawn_at_pos(player_list[_k]);
@@ -42,7 +43,7 @@ function sync_players(_new_list) {
 function client_player_spawn_at_pos(_player_info) {
 	var _layer = layer_get_id("Instances");
 	
-	var _name = _player_info.steam_name;
+	var _name = steam_get_persona_name(_player_info.steam_id);
 	var _steam_id = _player_info.steam_id;
 	var _num = _player_info.lobby_member_id;
 	var _loc = _player_info.start_pos;
