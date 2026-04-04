@@ -25,7 +25,7 @@ while (steam_net_packet_receive()) {
 			var _y = buffer_read(inbuf, buffer_u16);
 			var _steam_id = buffer_read(inbuf, buffer_u64);
 			var _num = array_length(player_list);
-			var _inst = instance_layer_create(_x, _y, _layer, obj_Player, {
+			var _inst = instance_create_layer(_x, _y, _layer, obj_Player, {
 				steam_name : steam_get_user_persona_name(_steam_id),
 				steam_id : _steam_id,
 				lobby_member_id : _num
