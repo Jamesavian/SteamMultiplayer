@@ -52,7 +52,7 @@ function server_player_spawn_at_pos(_steam_id, _pos) {
 				steam_id : _steam_id,
 				lobby_member_id : _i
 			});
-			player_list[_i].character = obj_Player;	
+			player_list[_i].character = _inst;	
 		}	
 	}
 }
@@ -65,14 +65,9 @@ function send_other_player_spawn(_steam_id, _pos) {
 	buffer_write(_b, buffer_u64, _steam_id);
 	
 	for (var _i = 1; _i < array_length(player_list); _i++) { // since p0 is always host, and also has the server,
-		
-		
-		if (player_list[_i].steam_id != _steam_id) {
-			
+		if (player_list[_i].steam_id != _steam_id) {	
 			steam_net_packet_send(player_list[_i].steam_id, _b);	
-			
 		}
-		
 	}
 	buffer_delete(_b);
 	
